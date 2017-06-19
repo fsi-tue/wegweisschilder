@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wegweiser-Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h2>Wegweiser-Generator</h2>
+  <div id="infotext">
+    Hier kannst du Wegweiser-Schilder für diverse Veranstatungen der FSI generieren. Hierbei kann ein bis zu zweizeiliger Text
+    festgelegt werden, unter dem Richtungspfeile angezeigt werden. Die Anzahl der Schilder pro Richtung kann beliebig festgelegt werden.<br />
+    Vorerst sind die Richtungsmöglichkeiten auf links, rechts und geradeaus beschränkt.
+  </div>
+  <div id="pdfform">
+  <form method="POST" action="create.php">
+    <table>
+      <tr>
+        <td>Erste Zeile:</td><td><input type="text" name="firstline" required="true"></td>
+      </tr>
+      <tr>
+        <td>Zweite Zeile:</td><td><input type="text" name="secondline"></td>
+      </tr>
+    </table>
+  <span>Bitte gib hier an, wie viele Schilder pro Richtung gedruckt werden sollen:</span><br />
+  links:&nbsp;<input type="number" name="left" min="0" max="10" value="0">
+  rechts:&nbsp;<input type="number" name="right" min="0" max="10" value="0">
+  geradeaus:&nbsp;<input type="number" name="ahead" min="0" max="10" value="0">
+  <!-- vorwärts immer, rückwärts nimmer! -->
+  <input type="submit" value="PDF generieren" />
+  </form>
+</div>
+  <p>Bitte hab etwas Geduld, während die PDF-Dateien generiert werden. For-Schleifen dauern eben ihre Zeit... <br />Zur Generierung der PDF-Files wird <a href="https://github.com/tecnickcom/tcpdf">TCPDF</a> verwendet.</p>
+  </body>
+</html>
