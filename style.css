@@ -1,12 +1,25 @@
 body {
   font-family: sans-serif;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
 #infotext {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.flex:nth-child(5) {
+  break-after: always;
 }
 
 input[type="number"] {

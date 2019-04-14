@@ -23,9 +23,19 @@
       </tr>
     </table>
   <span>Bitte gib hier an, wie viele Schilder pro Richtung gedruckt werden sollen:</span><br />
-  links:&nbsp;<input type="number" name="left" min="0" max="10" value="0">
-  rechts:&nbsp;<input type="number" name="right" min="0" max="10" value="0">
-  geradeaus:&nbsp;<input type="number" name="ahead" min="0" max="10" value="0">
+  <div class="flex">
+  <div>links:&nbsp;<input type="number" name="left" min="0" max="10" value="4"></div>
+  <div>rechts:&nbsp;<input type="number" name="right" min="0" max="10" value="4"></div>
+  <div>geradeaus:&nbsp;<input type="number" name="ahead" min="0" max="10" value="2"></div>
+  </div>
+  <div class="flex">
+  <div>links abbiegen:&nbsp;<input type="number" name="turnleft" min="0" max="10" value="0"></div>
+  <div>rechts abbiegen:&nbsp;<input type="number" name="turnright" min="0" max="10" value="0"></div>
+  </div>
+  <div class="flex">
+  <div>Treppe hoch:&nbsp;<input type="number" name="upstairs" min="0" max="10" value="0"></div>
+  <div>Treppe runter:&nbsp;<input type="number" name="downstairs" min="0" max="10" value="0"></div>
+  </div>
   <!-- vorwärts immer, rückwärts nimmer! -->
   <input type="submit" value="PDF generieren" />
   </form>
