@@ -1,9 +1,4 @@
 <?php
-// Debug
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require_once('TCPDF/tcpdf.php');
 
 // create empty vars
@@ -73,77 +68,4 @@ createPages($pdf, $num_upstairs, $firstline, $secondline, 'img/arrow_upstairs.pn
 createPages($pdf, $num_downstairs, $firstline, $secondline, 'img/arrow_downstairs.png', 63, 65, 170, 120);
 
 $pdf->Output(strtolower($firstline) . '_wegweiser.pdf', 'D');
-
-
-/*
-for ($i=0; $i < $num_left; $i++) {
-  $pdf->AddPage();
-  //Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=0, $link='', $stretch=0, $ignore_min_height=false, $calign='T', $valign='M')
-  $pdf->Cell(0, 0, $firstline, 0, 0, 'C', 0, '', 0);
-  $pdf->Ln(); // line break
-  $pdf->Cell(0, 0, $secondline, 0, 0, 'C', 0, '', 0);
-  //Image($file, $x='', $y='', $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false)
-  $pdf->Image('img/arrow_left.png', 70, 120, 150, 60, 'PNG', '', 'B', true, 300, '', false, false, 0, false, false, true);
-}
-
-for ($i=0; $i < $num_right; $i++) {
-  $pdf->AddPage();
-  //Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=0, $link='', $stretch=0, $ignore_min_height=false, $calign='T', $valign='M')
-  $pdf->Cell(0, 0, $firstline, 0, 0, 'C', 0, '', 0);
-  $pdf->Ln(); // line break
-  $pdf->Cell(0, 0, $secondline, 0, 0, 'C', 0, '', 0);
-  //Image($file, $x='', $y='', $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false)
-  $pdf->Image('img/arrow_right.png', 70, 120, 150, 60, 'PNG', '', 'B', true, 300, '', false, false, 0, false, false, true);
-}
-
-for ($i=0; $i < $num_ahead; $i++) {
-  $pdf->AddPage();
-  //Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=0, $link='', $stretch=0, $ignore_min_height=false, $calign='T', $valign='M')
-  $pdf->Cell(0, 0, $firstline, 0, 0, 'C', 0, '', 0);
-  $pdf->Ln(); // line break
-  $pdf->Cell(0, 0, $secondline, 0, 0, 'C', 0, '', 0);
-  //Image($file, $x='', $y='', $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false)
-  $pdf->Image('img/arrow_ahead.png', 70, 120, 150, 60, 'PNG', '', 'B', true, 300, '', false, false, 0, false, false, true);
-}
-
-for ($i=0; $i < $num_turnleft; $i++) {
-  $pdf->AddPage();
-  //Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=0, $link='', $stretch=0, $ignore_min_height=false, $calign='T', $valign='M')
-  $pdf->Cell(0, 0, $firstline, 0, 0, 'C', 0, '', 0);
-  $pdf->Ln(); // line break
-  $pdf->Cell(0, 0, $secondline, 0, 0, 'C', 0, '', 0);
-  //Image($file, $x='', $y='', $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false)
-  $pdf->Image('img/arrow_turnleft.png', 70, 120, 150, 60, 'PNG', '', 'B', true, 300, '', false, false, 0, false, false, true);
-}
-
-for ($i=0; $i < $num_turnright; $i++) {
-  $pdf->AddPage();
-  //Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=0, $link='', $stretch=0, $ignore_min_height=false, $calign='T', $valign='M')
-  $pdf->Cell(0, 0, $firstline, 0, 0, 'C', 0, '', 0);
-  $pdf->Ln(); // line break
-  $pdf->Cell(0, 0, $secondline, 0, 0, 'C', 0, '', 0);
-  //Image($file, $x='', $y='', $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false)
-  $pdf->Image('img/arrow_turnright.png', 70, 120, 150, 60, 'PNG', '', 'B', true, 300, '', false, false, 0, false, false, true);
-}
-
-for ($i=0; $i < $num_upstairs; $i++) {
-  $pdf->AddPage();
-  //Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=0, $link='', $stretch=0, $ignore_min_height=false, $calign='T', $valign='M')
-  $pdf->Cell(0, 0, $firstline, 0, 0, 'C', 0, '', 0);
-  $pdf->Ln(); // line break
-  $pdf->Cell(0, 0, $secondline, 0, 0, 'C', 0, '', 0);
-  //Image($file, $x='', $y='', $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false)
-  $pdf->Image('img/arrow_upstairs.png', 70, 120, 150, 60, 'PNG', '', 'B', true, 300, '', false, false, 0, false, false, true);
-}
-
-for ($i=0; $i < $num_downstairs; $i++) {
-  $pdf->AddPage();
-  //Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=0, $link='', $stretch=0, $ignore_min_height=false, $calign='T', $valign='M')
-  $pdf->Cell(0, 0, $firstline, 0, 0, 'C', 0, '', 0);
-  $pdf->Ln(); // line break
-  $pdf->Cell(0, 0, $secondline, 0, 0, 'C', 0, '', 0);
-  //Image($file, $x='', $y='', $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false, $hidden=false, $fitonpage=false)
-  $pdf->Image('img/arrow_downstairs.png', 70, 120, 150, 60, 'PNG', '', 'B', true, 300, '', false, false, 0, false, false, true);
-}
-*/
 ?>
