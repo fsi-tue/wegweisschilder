@@ -4,42 +4,45 @@
     <meta charset="utf-8">
     <title>Wegweiser-Generator</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body>
     <h2>Wegweiser-Generator</h2>
-  <div id="infotext">
-    Hier kannst du Wegweiser-Schilder für diverse Veranstatungen der FSI generieren. Hierbei kann ein bis zu zweizeiliger Text
-    festgelegt werden, unter dem Richtungspfeile angezeigt werden. Die Anzahl der Schilder pro Richtung kann beliebig festgelegt werden.<br />
-    Vorerst sind die Richtungsmöglichkeiten auf links, rechts und geradeaus beschränkt.
-  </div>
-  <div id="pdfform">
-  <form method="POST" action="create.php">
-    <table>
-      <tr>
-        <td>Erste Zeile:</td><td><input type="text" name="firstline" required="true"></td>
-      </tr>
-      <tr>
-        <td>Zweite Zeile:</td><td><input type="text" name="secondline"></td>
-      </tr>
-    </table>
-  <span>Bitte gib hier an, wie viele Schilder pro Richtung gedruckt werden sollen:</span><br />
-  <div class="flex">
-  <div>links:&nbsp;<input type="number" name="left" min="0" max="10" value="4"></div>
-  <div>rechts:&nbsp;<input type="number" name="right" min="0" max="10" value="4"></div>
-  <div>geradeaus:&nbsp;<input type="number" name="ahead" min="0" max="10" value="2"></div>
-  </div>
-  <div class="flex">
-  <div>links abbiegen:&nbsp;<input type="number" name="turnleft" min="0" max="10" value="0"></div>
-  <div>rechts abbiegen:&nbsp;<input type="number" name="turnright" min="0" max="10" value="0"></div>
-  </div>
-  <div class="flex">
-  <div>Treppe hoch:&nbsp;<input type="number" name="upstairs" min="0" max="10" value="0"></div>
-  <div>Treppe runter:&nbsp;<input type="number" name="downstairs" min="0" max="10" value="0"></div>
-  </div>
-  <!-- vorwärts immer, rückwärts nimmer! -->
-  <input type="submit" value="PDF generieren" />
-  </form>
-</div>
-  <p>Bitte hab etwas Geduld, während die PDF-Dateien generiert werden. For-Schleifen dauern eben ihre Zeit... <br />Zur Generierung der PDF-Files wird <a href="https://github.com/tecnickcom/tcpdf">TCPDF</a> verwendet.</p>
+    <div id="infotext">
+      Hier kannst du Wegweiser-Schilder für diverse Veranstatungen der FSI generieren. Hierbei kann ein bis zu zweizeiliger Text
+      festgelegt werden, unter dem Richtungspfeile angezeigt werden. Die Anzahl der Schilder pro Richtung kann beliebig festgelegt werden.<br />
+      Vorerst sind die Richtungsmöglichkeiten auf links, rechts und geradeaus beschränkt.
+    </div>
+    <div id="pdfform">
+      <form method="POST" action="create.php">
+        <table>
+          <tr>
+            <td>Erste Zeile:</td><td><input type="text" name="firstline" required="true"></td>
+          </tr>
+          <tr>
+            <td>Zweite Zeile:</td><td><input type="text" name="secondline"></td>
+          </tr>
+        </table>
+        <span>Bitte gib hier an, wie viele Schilder pro Richtung gedruckt werden sollen:</span><br />
+        <div class="flex">
+          <div>links:&nbsp;<input type="number" name="left" min="0" max="10" value="4"></div>
+          <div>rechts:&nbsp;<input type="number" name="right" min="0" max="10" value="4"></div>
+          <div>geradeaus:&nbsp;<input type="number" name="ahead" min="0" max="10" value="2"></div>
+        </div>
+        <div class="flex">
+          <div>links abbiegen:&nbsp;<input type="number" name="turnleft" min="0" max="10" value="0"></div>
+          <div>rechts abbiegen:&nbsp;<input type="number" name="turnright" min="0" max="10" value="0"></div>
+        </div>
+        <div class="flex">
+          <div>Treppe hoch:&nbsp;<input type="number" name="upstairs" min="0" max="10" value="0"></div>
+          <div>Treppe runter:&nbsp;<input type="number" name="downstairs" min="0" max="10" value="0"></div>
+        </div>
+        <!-- vorwärts immer, rückwärts nimmer! -->
+        <input type="submit" value="PDF generieren" />
+      </form>
+    </div>
+    <p>Bitte hab etwas Geduld, während die PDF-Dateien generiert werden. For-Schleifen dauern eben ihre Zeit... <br />Zur Generierung der PDF-Files wird <a href="https://github.com/tecnickcom/tcpdf">TCPDF</a> verwendet.</p>
+    <br />
+    <a class="github-button" href="https://github.com/fsi-tue/wegweisschilder/fork" data-icon="octicon-repo-forked" aria-label="Fork fsi-tue/wegweisschilder on GitHub">Fork</a>
   </body>
 </html>
